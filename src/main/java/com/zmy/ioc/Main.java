@@ -13,13 +13,18 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
     public static void main(String[] args) {
 //        m1();
-//        m2();
+        m2();
+//        m3();
+    }
+
+    private static void m3() {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext();
         ctx.getEnvironment().setActiveProfiles("prod");
         ctx.setConfigLocation("applicationContext.xml");
         ctx.refresh();
         DataSource ds = ctx.getBean(DataSource.class);
-        System.out.println("ds = " + ds);
+        DataSource ds1 = ctx.getBean(DataSource.class);
+        System.out.println(ds == ds1);
     }
 
     /**
@@ -31,7 +36,8 @@ public class Main {
         ctx.register(JavaConfig.class);
         ctx.refresh();
         DataSource ds = ctx.getBean(DataSource.class);
-        System.out.println("ds = " + ds);
+        DataSource ds1 = ctx.getBean(DataSource.class);
+        System.out.println(ds == ds1);
     }
 
     /**

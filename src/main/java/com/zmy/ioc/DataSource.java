@@ -36,12 +36,4 @@ public class DataSource {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "DataSource{" +
-                "url='" + url + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
 }

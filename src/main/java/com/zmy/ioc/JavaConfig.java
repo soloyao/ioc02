@@ -1,9 +1,6 @@
 package com.zmy.ioc;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Conditional;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 
 /**
  * @Author: MengyaoZeng
@@ -28,6 +25,7 @@ public class JavaConfig {
 
     @Bean
     @Profile("dev")
+    @Scope("prototype")
     DataSource devDs() {
         DataSource ds = new DataSource();
         ds.setUrl("jdbc.mysql:///vhr");
@@ -38,6 +36,7 @@ public class JavaConfig {
 
     @Bean
     @Profile("prod")
+    @Scope("prototype")
     DataSource prodDs() {
         DataSource ds = new DataSource();
         ds.setUrl("jdbc:mysql://192.168.23.56:3306/vhr");
