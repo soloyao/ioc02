@@ -12,6 +12,15 @@ public class DataSource {
     private String username;
     private String password;
 
+    @Override
+    public String toString() {
+        return "DataSource{" +
+                "url='" + url + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
     public String getUrl() {
         return url;
     }

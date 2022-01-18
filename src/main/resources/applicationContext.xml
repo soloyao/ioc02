@@ -3,19 +3,25 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <beans profile="dev">
-        <bean class="com.zmy.ioc.DataSource" id="devDs" scope="prototype">
-            <property name="url" value="jdbc:mysql:///vhr"/>
-            <property name="username" value="root"/>
-            <property name="password" value="123"/>
-        </bean>
-    </beans>
-    <beans profile="prod">
-        <bean class="com.zmy.ioc.DataSource" id="prodDs" scope="prototype">
-            <property name="url" value="jdbc:mysql://56.36.12.32:3306/vhr"/>
-            <property name="username" value="root"/>
-            <property name="password" value="fdasfads"/>
-        </bean>
-    </beans>
+
+    <bean class="com.zmy.ioc.DataSource" id="ds,ds1,ds2" scope="prototype">
+        <property name="url" value="jdbc:mysql:///vhr"/>
+        <property name="username" value="111"/>
+        <property name="password" value="111"/>
+    </bean>
+    <!--<beans profile="dev">-->
+        <!--<bean class="com.zmy.ioc.DataSource" id="devDs" scope="prototype">-->
+            <!--<property name="url" value="jdbc:mysql:///vhr"/>-->
+            <!--<property name="username" value="root"/>-->
+            <!--<property name="password" value="123"/>-->
+        <!--</bean>-->
+    <!--</beans>-->
+    <!--<beans profile="prod">-->
+        <!--<bean class="com.zmy.ioc.DataSource" id="prodDs" scope="prototype">-->
+            <!--<property name="url" value="jdbc:mysql://56.36.12.32:3306/vhr"/>-->
+            <!--<property name="username" value="root"/>-->
+            <!--<property name="password" value="fdasfads"/>-->
+        <!--</bean>-->
+    <!--</beans>-->
 
 </beans>
