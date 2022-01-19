@@ -14,7 +14,10 @@ public class Main {
     public static void main(String[] args) {
 //        m1();
 //        m2();
-        m3();
+//        m3();
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(JavaConfig2.class);
+        DataSource ds3 = ctx.getBean("ds,ds1,ds2", DataSource.class);
+        System.out.println("ds3 = " + ds3);
     }
 
     private static void m3() {
